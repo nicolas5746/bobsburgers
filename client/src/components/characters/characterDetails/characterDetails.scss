@@ -1,0 +1,7 @@
+@import '@styles/mixins.scss';
+
+.characterDetails {
+  @include centered;
+  @include flexWrap(nowrap);
+  @include row;
+}
