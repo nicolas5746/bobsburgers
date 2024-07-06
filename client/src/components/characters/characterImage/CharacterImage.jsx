@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Dots from '@ui/dots/Dots';
+import Loader from '@ui/loader/Loader';
 import './characterImage.scss';
 
 const CharacterImage = ({ character, imgStyle, imgTitle }) => {
@@ -7,20 +7,10 @@ const CharacterImage = ({ character, imgStyle, imgTitle }) => {
     return (
         Object.hasOwnProperty.call(character, 'image')
             ?
-            <img
-                className='characterImage'
-                alt={character.name}
-                src={character.image}
-                style={imgStyle}
-                title={imgTitle}
-            />
+            <img className='characterImage' alt={character.name} src={character.image} style={imgStyle} title={imgTitle} />
             :
-            <div
-                className='loadingImage'
-                style={imgStyle}
-                title={imgTitle}
-            >
-                <Dots />
+            <div className='loadingImage' style={imgStyle} title={imgTitle}>
+                <Loader className='dots' childs={4} />
             </div>
     );
 }

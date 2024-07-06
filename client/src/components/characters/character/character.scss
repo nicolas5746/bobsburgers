@@ -11,13 +11,7 @@
 
 .characterOverlay {
   @include flexWrap(wrap);
-  @include linearGradient((
-    10deg,
-    #fcdd60 0%,
-    #f9f9a7 10%,
-    #faf0e6 60%,
-    #fcdd60 100%
-  ));
+  @include linearGradient((10deg, #fcdd60 0%, #f9f9a7 10%, #faf0e6 60%, #fcdd60 100%));
   background-color: #faf0e6;
   border-radius: 10px;
   padding: 20px;

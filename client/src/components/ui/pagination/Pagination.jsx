@@ -7,20 +7,11 @@ import Cards from '@components/home/cards/Cards';
 
 const Pagination = ({ characters }) => {
     // Context values
-    const {
-        handleCurrentCharacters,
-        handleOnPageChange,
-        handlePageQuantity,
-        page,
-        searching
-    } = React.useContext(PageContext);
+    const { handleCurrentCharacters, handleOnPageChange, handlePageQuantity, page, searching } = React.useContext(PageContext);
 
     return (
         <>
-            <Cards
-                characters={characters}
-                currentCharacters={handleCurrentCharacters(characters)}
-            />
+            <Cards characters={characters} currentCharacters={handleCurrentCharacters(characters)} />
             <Stack spacing={2}>
                 <Pages
                     color='error'
@@ -32,20 +23,13 @@ const Pagination = ({ characters }) => {
                     shape='circular'
                     showFirstButton
                     showLastButton
-                    style={{
-                        alignItems: 'center',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        margin: '0.5% auto 5%'
-                    }}
+                    style={{ alignItems: 'center', display: 'flex', justifyContent: 'center', margin: '0.5% auto 5%' }}
                 />
             </Stack>
         </>
     );
 }
 
-Pagination.propTypes = {
-    characters: PropTypes.object
-}
+Pagination.propTypes = { characters: PropTypes.oneOfType([PropTypes.array, PropTypes.object]) }
 
 export default Pagination;

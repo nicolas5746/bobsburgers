@@ -6,11 +6,7 @@ const BackArrow = ({ buttonText, fontSize, onClick, style }) => {
 
     return (
         <div className='backArrow'>
-            <ArrowBackIcon
-                fontSize={fontSize}
-                onClick={onClick}
-                style={style}
-            />
+            <ArrowBackIcon fontSize={fontSize} onClick={onClick} style={style} />
             <h3>{buttonText}</h3>
         </div>
     );

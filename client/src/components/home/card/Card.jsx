@@ -1,16 +1,12 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import CharacterImage from '@components/characters/characterImage/CharacterImage';
-import Dots from '@ui/dots/Dots';
+import Loader from '@ui/loader/Loader';
 
 const Card = ({ character }) => {
 
     return (
-        <Link
-            to={`/character/${character.name}`}
-            aria-label='name'
-            style={{ textDecoration: 'none' }}
-        >
+        <Link to={`/character/${character.name}`} aria-label='name' style={{ textDecoration: 'none' }}>
             <div className='card' style={{ height: '350px' }}>
                 <CharacterImage
                     character={character}
@@ -22,20 +18,14 @@ const Card = ({ character }) => {
                     }
                 />
                 <div className='info'>
-                    <h2>
-                        {!character.name ? <Dots /> : character.name}
-                    </h2>
-                    <p className='data'>
-                        {!character.quotes ? <Dots /> : character.quotes}
-                    </p>
+                    <h2>{!character.name ? <Loader className='dots' childs={4} /> : character.name}</h2>
+                    <p className='data'>{!character.quotes ? <Loader className='dots' childs={4} /> : character.quotes}</p>
                 </div>
             </div>
         </Link>
     );
 }
 
-Card.propTypes = {
-    character: PropTypes.object
-}
+Card.propTypes = { character: PropTypes.object }
 
 export default Card;

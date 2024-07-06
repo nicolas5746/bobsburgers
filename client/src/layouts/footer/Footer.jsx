@@ -2,7 +2,7 @@ import './footer.scss';
 
 const Footer = () => {
 
-    let portfolio = `https://nicolasbatista.netlify.app/`;
+    let portfolio = `https://nicolasbatista.codeando.es/`;
 
     let profiles = [
         {
@@ -11,9 +11,9 @@ const Footer = () => {
             link: 'https://www.github.com/nicolas5746/'
         },
         {
-            name: 'Gmail',
-            image: 'https://i.postimg.cc/RVLKXfyp/gmail.png',
-            link: 'mailto:nicolas26386@gmail.com'
+            name: 'Email',
+            image: 'https://www.codeando.es/assets/favicon-D0rdKDDw.ico',
+            link: 'mailto:nicolasbatista@codeando.es'
         },
         {
             name: 'LinkedIn',
@@ -25,8 +25,8 @@ const Footer = () => {
     return (
         <footer>
             <h1>{`bob's burgers`}</h1>
-            <h2>{`characters`}</h2>
-            <p>{`by nicolás batista piñeyro`} &copy; {2023}</p>
+            <h2>characters</h2>
+            <p>by nicolás batista piñeyro &copy; 2023</p>
             <a href={portfolio} rel='noopener noreferrer' target='_blank'>
                 <span>{portfolio}</span>
             </a>

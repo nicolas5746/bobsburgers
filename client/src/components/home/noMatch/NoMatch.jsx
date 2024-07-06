@@ -4,7 +4,7 @@ const NoMatch = () => {
 
     return (
         <div className='noMatch'>
-            <h2>{`no match`}</h2>
+            <h2>no match</h2>
         </div>
     );
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { CharacterContext } from '@contexts/Contexts';
 import Banner from '@layouts/banner/Banner';
 import Footer from '@layouts/footer/Footer';
+import Loader from '@ui/loader/Loader';
 import Pagination from '@ui/pagination/Pagination';
-import Spinner from '@ui/spinner/Spinner';
 
 const Home = () => {
   // Context values
@@ -12,13 +12,7 @@ const Home = () => {
   return (
     <>
       <Banner />
-      {
-        characters.length < 1
-          ?
-          <Spinner />
-          :
-          <Pagination characters={characters} />
-      }
+      {characters.length < 1 ? <Loader className='spinner' childs={12} /> : <Pagination characters={characters} />}
       <Footer />
     </>
   );

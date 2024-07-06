@@ -9,15 +9,11 @@ import './cards.scss';
 
 const Cards = ({ characters, currentCharacters }) => {
     // Context values
-    const {
-        filter,
-        handleFilteredCharacters,
-        handleOnFilterChange
-    } = React.useContext(PageContext);
+    const { filter, handleFilteredCharacters, handleOnFilterChange } = React.useContext(PageContext);
 
     return (
         <div className='cardsContainer'>
-            <h1>{`Search character`}</h1>
+            <h1>Search character</h1>
             <Box
                 autoComplete='off'
                 component='form'
@@ -27,9 +23,7 @@ const Cards = ({ characters, currentCharacters }) => {
                     '& .MuiInputBase-formControl': { color: '#f0262a' },
                     '& label.Mui-focused': {
                         color: '#f0262a',
-                        '&:hover': {
-                            color: '#f30f12'
-                        }
+                        '&:hover': { color: '#f30f12' }
                     }
                 }}
             >
@@ -50,13 +44,9 @@ const Cards = ({ characters, currentCharacters }) => {
                         ?
                         <NoMatch />
                         :
-                        handleFilteredCharacters(characters)
-                            .map((character) => (
-                                <Card character={character} key={character.id} />))
+                        handleFilteredCharacters(characters).map((character) => (<Card character={character} key={character.id} />))
                     :
-                    currentCharacters
-                        .map((character) => (
-                            <Card character={character} key={character.id} />))
+                    currentCharacters.map((character) => (<Card character={character} key={character.id} />))
                 }
             </div>
         </div>
@@ -64,8 +54,8 @@ const Cards = ({ characters, currentCharacters }) => {
 }
 
 Cards.propTypes = {
-    characters: PropTypes.object,
-    currentCharacters: PropTypes.object
+    characters: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    currentCharacters: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
 export default Cards;

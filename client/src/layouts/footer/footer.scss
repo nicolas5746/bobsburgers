@@ -68,26 +68,20 @@ footer {
     }
   }
 
-  h1,
-  h2::first-letter {
+  :is(h1, h2)::first-letter {
     text-transform: uppercase;
   }
 
-  h2,
-  p {
+  :is(h2, p) {
     font-family: fonts.$lato;
     margin: 0 auto 10px;
   }
 
-  p,
-  a span {
+  :is(p, a span) {
     font-weight: 400;
   }
 
-  h1,
-  h2,
-  p,
-  a {
+  :is(h1, h2, p, a) {
     @include centeredText;
   }
 }

@@ -22,10 +22,8 @@ app.get('*', (req, res) => {
 });
 
 // Server
-const server = () => {
+(() => {
     app.listen(app.get('port'));
     console.log(`\x1B[36m Local server started:`);
     console.log(`\x1B[34m https://localhost:${app.get('port')}`);
-}
-
-server();
+})();

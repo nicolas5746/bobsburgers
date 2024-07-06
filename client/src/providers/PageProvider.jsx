@@ -9,22 +9,8 @@ const PageProvider = ({ children }) => {
     const [searching, setSearching] = React.useState(false);
     // Characters shown in each page
     const charactersPerPage = 12;
-    // Function to determine if searching is currently active
-    const handleIsSearching = () => {
-        filter.length >= 1
-            ?
-            setSearching(true)
-            :
-            setSearching(false);
-    }
     // Function to scroll to the top of page
-    const handleScrollToTop = () => {
-        window.scroll({
-            behavior: 'smooth',
-            left: 0,
-            top: 0
-        });
-    }
+    const handleScrollToTop = () => window.scroll({ behavior: 'smooth', left: 0, top: 0 });
     // Function to determine page quantity
     const handlePageQuantity = (characters) => {
         return Math.ceil(characters.length / charactersPerPage);
@@ -41,19 +27,17 @@ const PageProvider = ({ children }) => {
         setPage(page);
     }
     // On change function when search filtering
-    const handleOnFilterChange = (event) => {
-        setFilter(event.target.value);
-    }
+    const handleOnFilterChange = (event) => setFilter(event.target.value);
     // Filter characters by name and converting to lower case
     const handleFilteredCharacters = (characters) => {
         return characters.filter((character) => {
             return character.name.toLowerCase().match(filter.toLowerCase())
         });
     }
-    // Effects
+    // Determine if searching is currently active
     React.useEffect(() => {
-        handleIsSearching();
-    });
+        filter.length >= 1 ? setSearching(true) : setSearching(false);
+    }, [filter.length]);
 
     return (
         <PageContext.Provider value={{
@@ -72,8 +56,6 @@ const PageProvider = ({ children }) => {
     );
 }
 
-PageProvider.propTypes = {
-    children: PropTypes.node
-}
+PageProvider.propTypes = { children: PropTypes.node }
 
 export default PageProvider;

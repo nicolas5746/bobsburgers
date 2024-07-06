@@ -12,9 +12,9 @@ const Router = () => {
             <PageProvider>
                 <BrowserRouter>
                     <Routes>
-                        <Route path={`/`} element={<Home />} />
-                        <Route path={`/character/:name`} element={<Characters />} />
-                        <Route path={`/*`} element={<NotFound />} />
+                        <Route path='/' element={<Home />} />
+                        <Route path='/character/:name' element={<Characters />} />
+                        <Route path='/*' element={<NotFound />} />
                     </Routes>
                 </BrowserRouter>
             </PageProvider>

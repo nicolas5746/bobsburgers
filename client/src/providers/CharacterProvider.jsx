@@ -5,16 +5,17 @@ import { CharacterContext } from '@contexts/Contexts';
 const CharacterProvider = ({ children }) => {
     // States
     const [characters, setCharacters] = React.useState([]);
-    // Function to fetch characters data
-    const fetchCharacters = () => {
-        fetch('https://bobsburgersserver.vercel.app/characters')
+    // Function to get characters data
+    const fetchCharacters = async () => {
+        await fetch('https://bobsburgersserver.vercel.app/characters')
             .then((response) => response.json())
             .then((data) => setCharacters(data))
             .catch((error) => {
-                throw error;
+                console.error(error);
+                alert(error.message);
             });
     }
-    // Effects
+    // Render characters
     React.useEffect(() => {
         fetchCharacters();
     }, []);
@@ -26,8 +27,6 @@ const CharacterProvider = ({ children }) => {
     );
 }
 
-CharacterProvider.propTypes = {
-    children: PropTypes.node
-}
+CharacterProvider.propTypes = { children: PropTypes.node }
 
 export default CharacterProvider;
