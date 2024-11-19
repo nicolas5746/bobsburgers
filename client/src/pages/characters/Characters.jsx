@@ -10,8 +10,7 @@ const Characters = () => {
 
     return (
         <>
-            {characters.length < 1
-                ?
+            {characters.length < 1 ?
                 <>
                     <Banner />
                     <Loader className='spinner' childs={12} />

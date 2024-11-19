@@ -38,16 +38,14 @@ const Cards = ({ characters, currentCharacters }) => {
                 />
             </Box>
             <div id='cards' className='cards'>
-                {filter.length >= 1
-                    ?
+                {filter.length >= 1 ?
                     handleFilteredCharacters(characters).length < 1
                         ?
                         <NoMatch />
                         :
                         handleFilteredCharacters(characters).map((character) => (<Card character={character} key={character.id} />))
                     :
-                    currentCharacters.map((character) => (<Card character={character} key={character.id} />))
-                }
+                    currentCharacters.map((character) => (<Card character={character} key={character.id} />))}
             </div>
         </div>
     );

@@ -1,26 +1,38 @@
+import React from 'react';
 import './footer.scss';
 
 const Footer = () => {
 
-    let portfolio = `https://nicolasbatista.codeando.es/`;
+    const [portfolio, setPortfolio] = React.useState('');
 
     let profiles = [
         {
             name: 'Github',
-            image: 'https://i.postimg.cc/kXmWQw1t/github.png',
+            image: 'https://res.cloudinary.com/dmnyy2q99/image/upload/v1728013820/github_puzyq6.png',
             link: 'https://www.github.com/nicolas5746/'
         },
         {
             name: 'Email',
-            image: 'https://www.codeando.es/assets/favicon-D0rdKDDw.ico',
-            link: 'mailto:nicolasbatista@codeando.es'
+            image: 'https://res.cloudinary.com/dmnyy2q99/image/upload/v1728013820/gmail_mj4aus.png',
+            link: 'mailto:nicolas26386@gmail.com'
         },
         {
             name: 'LinkedIn',
-            image: 'https://i.postimg.cc/kgM8ZGdJ/linkedin.png',
+            image: 'https://res.cloudinary.com/dmnyy2q99/image/upload/v1728013820/linkedin_juwoo0.png',
             link: 'https://www.linkedin.com/in/nicolasbatistadev/'
         }
     ];
+
+    React.useEffect(() => {
+        const url = 'https://api.npoint.io/0274475edb0f9685ef3d';
+        fetch(url)
+            .then((response) => response.json())
+            .then((response) => setPortfolio(response.url))
+            .catch((error) => {
+                console.error(error.message);
+                setPortfolio('');
+            });
+    }, []);
 
     return (
         <footer>
@@ -31,13 +43,11 @@ const Footer = () => {
                 <span>{portfolio}</span>
             </a>
             <ul className='profiles'>
-                {profiles.map((profile, index) => (
-                    <li key={index}>
-                        <a href={profile.link} rel='noopener noreferrer' target='_blank'>
-                            <img alt={profile.name} src={profile.image} title={profile.name} />
-                        </a>
-                    </li>))
-                }
+                {profiles.map((profile, index) => (<li key={index}>
+                    <a href={profile.link} rel='noopener noreferrer' target='_blank'>
+                        <img alt={profile.name} src={profile.image} title={profile.name} />
+                    </a>
+                </li>))}
             </ul>
         </footer>
     );

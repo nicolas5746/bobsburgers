@@ -5,8 +5,7 @@ import './characterImage.scss';
 const CharacterImage = ({ character, imgStyle, imgTitle }) => {
 
     return (
-        Object.hasOwnProperty.call(character, 'image')
-            ?
+        Object.hasOwnProperty.call(character, 'image') ?
             <img className='characterImage' alt={character.name} src={character.image} style={imgStyle} title={imgTitle} />
             :
             <div className='loadingImage' style={imgStyle} title={imgTitle}>

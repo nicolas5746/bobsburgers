@@ -26,8 +26,7 @@ const Character = ({ characters }) => {
             <div className='characterOverlay' ref={backgroundRef}>
                 {characters
                     .filter((character) => character.name === name)
-                    .map((character) => (<CharacterDetails character={character} key={character.id} />))
-                }
+                    .map((character) => (<CharacterDetails character={character} key={character.id} />))}
             </div>
         </div>
     );
