@@ -1,0 +1,87 @@
+@use './fonts.scss';
+@use './mixins.scss';
+
+html {
+  @include mixins.textSizeAdjust(100%);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #fcdd60;
+  color-scheme: light;
+  font-synthesis: none;
+  line-height: 1;
+  min-height: 100vh;
+  min-width: 100vw;
+  place-items: center;
+  text-rendering: optimizeLegibility;
+  z-index: 1;
+
+  &::before {
+    background-image: url('https://res.cloudinary.com/dmnyy2q99/image/upload/v1731974345/burgers-background_pn6wnl.jpg');
+    background-size: cover;
+    content: '';
+    inset: 0;
+    opacity: 0.2;
+    position: fixed;
+    z-index: -1;
+  }
+}
+
+.card {
+  @include mixins.transition(all 0.5s ease-in-out);
+  background-color: #dcdcdc;
+  border: 1px solid #838996;
+  border-radius: 15px;
+  color: #1f2937;
+  margin: 20px;
+  padding: 1px;
+  width: 225px;
+
+  &:hover {
+    @include mixins.scale(1.05);
+  }
+}
+
+.info {
+  padding: 1px 3px 5px;
+
+  h2 {
+    font-family: fonts.$roboto;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: capitalize;
+  }
+}
+
+.data {
+  font-weight: 600;
+}
+
+.description {
+  font-weight: 400;
+}
+
+.data,
+.description {
+  font-family: fonts.$lato;
+  font-size: 0.8rem;
+}
+
+.info h2,
+.data,
+.description {
+  @include mixins.centeredText;
+}
+
+@media screen and (max-width: 599px) {
+  .card {
+    @include mixins.scale(0.65);
+    margin: -35px;
+
+    &:hover {
+      @include mixins.scale(0.7);
+    }
+  }
+}

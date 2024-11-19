@@ -1,0 +1,14 @@
+.banner {
+  display: block;
+  height: 40%;
+  margin: 0 auto;
+  top: 0;
+  width: 40%;
+}
+
+@media screen and (max-width: 599px) {
+  .banner {
+    height: 50%;
+    width: 50%;
+  }
+}

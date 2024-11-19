@@ -1,0 +1,15 @@
+@use '@/styles/mixins.scss';
+
+.characterImage {
+  width: 100%;
+}
+
+.loadingImage {
+  @include mixins.centered;
+}
+
+.characterImage,
+.loadingImage {
+  background-color: #f0ffff;
+  border-radius: 15px 15px 0 0;
+}

@@ -1,0 +1,123 @@
+@mixin centered {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin centeredText {
+  text-align: center;
+  vertical-align: middle;
+}
+
+@mixin column {
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+
+@mixin dotsAnimation($number, $animation, $left) {
+  &:nth-child(#{$number}) {
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+    left: $left;
+  }
+}
+
+@mixin flexWrap($value) {
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin linearGradient($values) {
+  background-image: -moz-linear-gradient($values);
+  background-image: -o-linear-gradient($values);
+  background-image: -webkit-linear-gradient($values);
+  background-image: linear-gradient($values);
+}
+
+@mixin row {
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+}
+
+@mixin spinnerAnimation($animation, $origin) {
+  -ms-transform-origin: $origin;
+  -moz-animation: $animation;
+  -moz-transform-origin: $origin;
+  -o-animation: $animation;
+  -o-transform-origin: $origin;
+  -webkit-animation: $animation;
+  -webkit-transform-origin: $origin;
+  animation: $animation;
+  transform-origin: $origin;
+}
+
+@mixin textSizeAdjust($value) {
+  -moz-text-size-adjust: $value;
+  -ms-text-size-adjust: $value;
+  -webkit-text-size-adjust: $value;
+  text-size-adjust: $value;
+}
+
+@mixin timing($value) {
+  -moz-animation-timing-function: $value;
+  -o-animation-timing-function: $value;
+  -webkit-animation-timing-function: $value;
+  animation-timing-function: $value;
+}
+
+@mixin rotation($number, $delay, $rotate) {
+  &:nth-child(#{$number}) {
+    -moz-animation-delay: $delay;
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-animation-delay: $delay;
+    -o-transform: rotate($rotate);
+    -webkit-animation-delay: $delay;
+    -webkit-transform: rotate($rotate);
+    animation-delay: $delay;
+    transform: rotate($rotate);
+  }
+}
+
+@mixin scale($number) {
+  -moz-transform: scale($number);
+  -ms-transform: scale($number);
+  -o-transform: scale($number);
+  -webkit-transform: scale($number);
+  transform: scale($number);
+}
+
+@mixin transition($value) {
+  -moz-transition: $value;
+  -o-transition: $value;
+  -webkit-transition: $value;
+  transition: $value;
+}
+
+@mixin translate($x, $y) {
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}

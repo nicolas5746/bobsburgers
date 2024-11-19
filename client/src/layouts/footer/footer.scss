@@ -1,0 +1,137 @@
+@use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+footer {
+  @include mixins.column;
+  background-color: #141414cc;
+  height: 20%;
+  inset: 0;
+  margin: -2%;
+  padding: 2%;
+  position: relative;
+  width: 100vw;
+
+  h1 {
+    color: #f7080c;
+    font-family: fonts.$bobsburgers;
+    font-size: 3.5rem;
+    margin: 1px;
+    text-shadow: 2px 1px 2px #e6d17c;
+  }
+
+  h2 {
+    color: #e6e6e0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-shadow: 2px 1px 2px #656565;
+  }
+
+  p {
+    color: #f0ffff;
+    font-size: 1rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &::first-letter {
+      text-transform: lowercase;
+    }
+  }
+
+  a {
+    @include mixins.transition(all 0.2s ease-in-out);
+    text-decoration: none;
+
+    span {
+      color: #dcdcdc;
+      font-family: fonts.$roboto;
+      font-size: 0.8rem;
+
+      &:link {
+        color: #f5f5dc;
+      }
+
+      &:visited {
+        color: #410975;
+      }
+
+      &:hover {
+        color: #faf0e6;
+      }
+
+      &:active {
+        color: #f7080c;
+      }
+    }
+
+    &:hover {
+      @include mixins.scale(1.01);
+    }
+  }
+
+  :is(h1, h2)::first-letter {
+    text-transform: uppercase;
+  }
+
+  :is(h2, p) {
+    font-family: fonts.$lato;
+    margin: 0 auto 10px;
+  }
+
+  :is(p, a span) {
+    font-weight: 400;
+  }
+
+  :is(h1, h2, p, a) {
+    @include mixins.centeredText;
+  }
+}
+
+.profiles {
+  list-style: none;
+  margin: 10px 0 10px -40px;
+
+  li {
+    margin: 0 2px;
+
+    a {
+      padding: 1px;
+
+      img {
+        @include mixins.transition(all 0.3s ease-in-out);
+        filter: grayscale(100%);
+        width: 25px;
+
+        &:hover {
+          @include mixins.scale(1.2);
+          cursor: pointer;
+          filter: grayscale(0%);
+        }
+      }
+    }
+  }
+}
+
+footer,
+.profiles {
+  @include mixins.centered;
+}
+
+@media screen and (max-width: 599px) {
+  footer {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    a span {
+      font-size: 0.6rem;
+    }
+  }
+}

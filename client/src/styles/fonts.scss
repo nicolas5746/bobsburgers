@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Bob\'s Burgers';
+  src: local('Bob\'s Burgers'),
+    url('@/assets/fonts/bobsburgers.ttf') format('truetype');
+}
+
+$bobsburgers: 'Bob\'s Burgers';
+$lato: 'Lato', sans-serif;
+$roboto: 'Roboto', sans-serif;

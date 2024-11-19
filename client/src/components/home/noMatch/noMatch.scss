@@ -1,0 +1,13 @@
+@use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+.noMatch {
+  @include mixins.centered;
+
+  h2 {
+    @include mixins.centeredText;
+    color: #0a0000;
+    font-family: fonts.$bobsburgers;
+    font-size: 5rem;
+  }
+}

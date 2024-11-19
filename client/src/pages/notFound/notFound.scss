@@ -1,0 +1,49 @@
+@use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+.notFound {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.errorContainer {
+  @include mixins.column;
+
+  p {
+    @include mixins.centeredText;
+    font-family: fonts.$bobsburgers;
+    font-size: 2rem;
+    margin: 0.5%;
+  }
+}
+
+.imageWithBackArrow {
+  @include mixins.flexWrap(nowrap);
+  margin-left: -15%;
+
+  img {
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+  }
+}
+
+.backArrowContainer {
+  margin-top: 25%;
+  position: relative;
+}
+
+.errorContainer,
+.imageContainer,
+.imageWithBackArrow,
+.backArrowContainer {
+  @include mixins.centered;
+}
+
+.imageContainer,
+.imageWithBackArrow {
+  @include mixins.row;
+}

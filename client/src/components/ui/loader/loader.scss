@@ -1,0 +1,137 @@
+@use '@/styles/mixins.scss';
+
+/* Dots */
+
+.dots {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 20px;
+
+  div {
+    @include mixins.dotsAnimation(1, dots1 0.6s infinite, -8px);
+    @include mixins.dotsAnimation(2, dots2 0.6s infinite, -8px);
+    @include mixins.dotsAnimation(3, dots2 0.6s infinite, 8px);
+    @include mixins.dotsAnimation(4, dots3 0.6s infinite, 32px);
+    @include mixins.timing(cubic-bezier(0, 1, 1, 0));
+    background: #f0262a;
+    border-radius: 50%;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    width: 8px;
+  }
+}
+
+@keyframes dots1 {
+  0% {
+    @include mixins.scale(0);
+  }
+  100% {
+    @include mixins.scale(1);
+  }
+}
+
+@-webkit-keyframes dots1 {
+  0% {
+    @include mixins.scale(0);
+  }
+  100% {
+    @include mixins.scale(1);
+  }
+}
+
+@keyframes dots2 {
+  0% {
+    @include mixins.translate(0, 0);
+  }
+  100% {
+    @include mixins.translate(24px, 0);
+  }
+}
+
+@-webkit-keyframes dots3 {
+  0% {
+    @include mixins.scale(1);
+  }
+  100% {
+    @include mixins.scale(0);
+  }
+}
+
+@keyframes dots3 {
+  0% {
+    @include mixins.scale(1);
+  }
+  100% {
+    @include mixins.scale(0);
+  }
+}
+
+@-webkit-keyframes dots3 {
+  0% {
+    @include mixins.scale(1);
+  }
+  100% {
+    @include mixins.scale(0);
+  }
+}
+
+/* Spinner */
+
+.spinner {
+  height: 80px;
+  margin: 10% auto;
+  position: relative;
+  width: 80px;
+
+  div {
+    @include mixins.rotation(1, -1.1s, 0deg);
+    @include mixins.rotation(2, -1s, 30deg);
+    @include mixins.rotation(3, -0.9s, 60deg);
+    @include mixins.rotation(4, -0.8s, 90deg);
+    @include mixins.rotation(5, -0.7s, 120deg);
+    @include mixins.rotation(6, -0.6s, 150deg);
+    @include mixins.rotation(7, -0.5s, 180deg);
+    @include mixins.rotation(8, -0.4s, 210deg);
+    @include mixins.rotation(9, -0.3s, 240deg);
+    @include mixins.rotation(10, -0.2s, 270deg);
+    @include mixins.rotation(11, -0.1s, 300deg);
+    @include mixins.rotation(12, 0s, 330deg);
+    @include mixins.spinnerAnimation(spinner 1.2s linear infinite, 40px 40px);
+  }
+
+  div:after {
+    background-color: #f0262a;
+    border-radius: 20%;
+    content: '';
+    height: 18px;
+    left: 37px;
+    position: absolute;
+    top: 3px;
+    width: 6px;
+  }
+}
+
+.spinner,
+.spinner div:after {
+  display: block;
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

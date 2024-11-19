@@ -1,0 +1,38 @@
+@use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+.cardsContainer {
+  @include mixins.centered;
+  @include mixins.column;
+
+  h1 {
+    @include mixins.centeredText;
+    color: #d30306;
+    font-family: fonts.$bobsburgers;
+    font-size: 2.5rem;
+  }
+}
+
+.cards {
+  align-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .cardsContainer h1 {
+    font-size: 1.6rem;
+  }
+
+  .cards {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: auto auto auto;
+  }
+}

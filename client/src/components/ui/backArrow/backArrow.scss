@@ -1,0 +1,21 @@
+@use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+.backArrow {
+  @include mixins.centered;
+  @include mixins.column;
+  cursor: pointer;
+
+  h3 {
+    color: #f0262a;
+    font-family: fonts.$bobsburgers;
+    font-size: 2.5rem;
+    margin: 5% 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .backArrow {
+    @include mixins.scale(0.8);
+  }
+}
