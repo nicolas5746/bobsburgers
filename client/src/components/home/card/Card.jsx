@@ -6,7 +6,7 @@ import Loader from '@ui/loader/Loader';
 const Card = ({ character }) => {
 
     return (
-        <Link to={`/character/${character.name}`} aria-label='name' style={{ textDecoration: 'none' }}>
+        <Link to={`../character/${character.name}`} aria-label='name' style={{ textDecoration: 'none' }}>
             <div className='card' style={{ height: '350px' }}>
                 <CharacterImage
                     character={character}

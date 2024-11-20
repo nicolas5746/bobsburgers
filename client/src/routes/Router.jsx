@@ -10,11 +10,13 @@ const Router = () => {
     return (
         <CharacterProvider>
             <PageProvider>
-                <BrowserRouter>
+                <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/character/:name' element={<Characters />} />
-                        <Route path='/*' element={<NotFound />} />
+                        <Route path='/'>
+                            <Route path='*' element={<NotFound />} />
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </PageProvider>

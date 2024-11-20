@@ -11,7 +11,7 @@ const NotFound = () => {
                 <p style={{ color: '#000', marginBottom: '-2%', zIndex: '1' }}>404</p>
                 <div className='imageContainer'>
                     <div className='backArrowContainer'>
-                        <Link to='/' aria-label='home' style={{ textDecoration: 'none' }}>
+                        <Link to='../' aria-label='home' style={{ textDecoration: 'none' }}>
                             <BackArrow buttonText='back' fontSize='large' onClick={() => window.scroll({ behavior: 'smooth', left: 0, top: 0 })} style={{ color: '#f0262a' }} />
                         </Link>
                     </div>
